@@ -52,6 +52,6 @@ class PDF
 end
 
 
-book = PDF.new(100, 1, 1, false, false)
-puts book.bind_book_price(false) # 8000
-puts book.bind_book_price(true) # 4000
+# book = PDF.new(100, 1, 1, false, false)
+# puts book.bind_book_price(false) # 8000
+# puts book.bind_book_price(true) # 4000
