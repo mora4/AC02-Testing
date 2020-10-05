@@ -4,50 +4,38 @@ require_relative "../pdf_pricer"
 
 describe PDF do
   let(:pdf1) {PDF.new(1000, 6, 5, true, true)}
-  let(:pdf2) {PDF.new(101, 6, 1, false, true)}
-  let(:pdf3) {PDF.new(401, 1, 1, false, true)}
-  let(:pdf4) {PDF.new(400, 5, 0, false, false)}
-  let(:pdf5) {PDF.new(400, 0, 0, false, false)}
-  let(:pdf6) {PDF.new(100, 1, 10, false, false)}
+  let(:pdf2) {PDF.new(301, 6, 1, false, true)}
+  let(:pdf3) {PDF.new(1000, 0, 5, false, false)}
+  let(:pdf4) {PDF.new(501, 1, 3, false, false)}
+  let(:pdf5) {PDF.new(501, 1, 1, false, true)}
+  let(:pdf6) {PDF.new(50, 0, 0, false, true)}  
+  let(:pdf7) {PDF.new(1150, 0, 5, false, false)}
 
-  it "TC1: validate price" do
-    # TR1, TR3
+  it "TC1: Covers TR1, TR3, TR5, TR13" do
     expect(pdf1.bind_book_price(true)).to eq(10000)
   end
 
-  it "TC2: validate price" do
-    # TR2, TR4
-    expect(pdf2.bind_book_price(true)).to eq(4000)
-  end
-
-  it "TC3: validate price" do
-    # TR5
-    expect(pdf1.bind_book_price(false)).to eq(20000)
-  end
-
-  it "TC4: validate price" do
-    # TR6
-    expect(pdf3.bind_book_price(false)).to eq(8000)
-  end
-
-  it "TC5: validate price" do
-    # TR7
+  it "TC2: Covers TR2, TR4, TR6, TR8" do
     expect(pdf2.bind_book_price(false)).to eq(8000)
   end
 
-  it "TC6: validate price" do
-    # TR8
+  it "TC3: Covers TR7" do
+    expect(pdf3.bind_book_price(false)).to eq(4000)
+  end
+
+  it "TC4: Covers TR9" do
     expect(pdf4.bind_book_price(false)).to eq(4000)
   end
 
-  it "TC7: validate price" do
-    # TR9
-    expect(pdf5.bind_book_price(true)).to eq(4000)
+  it "TC5: Covers TR10" do
+    expect(pdf5.bind_book_price(false)).to eq(8000)
   end
 
-  it "TC8: validate price" do
-    # TR10
-    expect(pdf6.bind_book_price(true)).to eq(4000)
+  it "TC6: Covers TR11" do
+    expect(pdf6.bind_book_price(false)).to eq(4000)
   end
 
+  it "TC7: Covers TR12" do
+    expect(pdf7.bind_book_price(true)).to eq(4000)
+  end
 end
