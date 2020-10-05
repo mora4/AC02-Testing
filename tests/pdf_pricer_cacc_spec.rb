@@ -7,8 +7,8 @@ describe PDF do
   let(:pdf2) {PDF.new(101, 6, 1, false, true)}
   let(:pdf3) {PDF.new(401, 1, 1, false, true)}
   let(:pdf4) {PDF.new(400, 5, 0, false, false)}
-  let(:pdf3) {PDF.new(400, 0, 0, false, false)}
-  let(:pdf4) {PDF.new(100, 1, 10, false, false)}
+  let(:pdf5) {PDF.new(400, 0, 0, false, false)}
+  let(:pdf6) {PDF.new(100, 1, 10, false, false)}
 
   it "TC1: validate price" do
     # TR1, TR3
@@ -28,6 +28,7 @@ describe PDF do
   it "TC4: validate price" do
     # TR6
     expect(pdf3.bind_book_price(false)).to eq(8000)
+  end
 
   it "TC5: validate price" do
     # TR7
@@ -48,3 +49,5 @@ describe PDF do
     # TR10
     expect(pdf6.bind_book_price(true)).to eq(4000)
   end
+
+end
