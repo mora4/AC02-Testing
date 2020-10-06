@@ -29,7 +29,7 @@ DEPENDENCIES
   simplecov (~> 0.19.0)
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 2.6.3p62
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
